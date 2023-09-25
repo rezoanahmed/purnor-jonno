@@ -5,12 +5,26 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import Root from './Root/Root';
+import Hero from './components/Hero/Hero';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello world!</div>,
+    element: <Root></Root>,
+    loader: ()=>fetch("/donation.json"),
+    children:[
+      {
+        path:'/',
+        element: <Hero></Hero>
+      },
+      {
+        // path: '/',
+
+      }
+    ]
   },
+
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
