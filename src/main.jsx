@@ -7,20 +7,28 @@ import {
 } from "react-router-dom";
 import Root from './Root/Root';
 import Hero from './components/Hero/Hero';
+import Donations from './components/Donations/Donations';
+import Donation from './components/Donation/Donation';
+import DonantionsContainer from './components/DonationsContainer/DonantionsContainer';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    loader: ()=>fetch("/donation.json"),
     children:[
       {
         path:'/',
-        element: <Hero></Hero>
+        loader: ()=>fetch("/donation.json"),
+        element: <DonantionsContainer></DonantionsContainer>,
+        
       },
       {
-        // path: '/',
-
+        path: '/donantions',
+        element: <Donations></Donations>
+      },
+      {
+        path: '/donation/',
+        element: <Donation></Donation>
       }
     ]
   },

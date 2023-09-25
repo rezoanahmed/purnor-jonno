@@ -1,7 +1,9 @@
 
 
+
 const Hero = () => {
     return (
+        <>
         <div>
             <div className="mt-5 hero h-96" style={{ backgroundImage: 'url(../../../public/Banner.png)' }}>
                 <div className="hero-overlay bg-white bg-opacity-80"></div>
@@ -16,6 +18,8 @@ const Hero = () => {
                 </div>
             </div>
         </div>
+        
+        </>
     );
 };
 
