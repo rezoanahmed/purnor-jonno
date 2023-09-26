@@ -9,9 +9,12 @@ const Navbar = () => {
                 <Link to='/'><img src="../../../public/Logo.png" alt="" className="w-36"/></Link>
             </div> 
             <div className="flex gap-2">
-                <NavLink to='/'>Home</NavLink>
-                <NavLink to='/donantions'>Donations</NavLink>
-                <NavLink to='/stats'>Statistics</NavLink>
+                <NavLink to='/' className={({ isActive, isPending }) =>
+    isPending ? "" : isActive ? "text-red-600 underline" : ""}>Home</NavLink>
+                <NavLink to='/donantions' className={({ isActive, isPending }) =>
+    isPending ? "" : isActive ? "text-red-600 underline" : ""}>Donations</NavLink>
+                <NavLink to='/stats' className={({ isActive, isPending }) =>
+    isPending ? "" : isActive ? "text-red-600 underline" : ""}>Statistics</NavLink>
             </div>
         </div>
         {/* <Outlet></Outlet> */}
