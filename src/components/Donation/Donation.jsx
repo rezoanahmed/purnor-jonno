@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
+import swal from "sweetalert";
 
 
 const Donation = () => {
@@ -30,6 +31,7 @@ const Donation = () => {
             localStorage.setItem('donation', JSON.stringify(totalDonation))
             
         }
+        swal("Thanks for the donation", "❤️❤️❤️", "success");
         
 
     }

@@ -1,5 +1,4 @@
 
-
 const MyDonationCard = ({donation}) => {
     const {title,picture, category, price, bg_color, text_color, category_color} = donation;
     return (
