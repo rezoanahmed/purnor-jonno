@@ -14,7 +14,7 @@ const Donation = () => {
         const donationDetails = data.find(element=>element.id==id);
         setDonation(donationDetails)
     },[data, id])
-    const {title, picture, description, price} = donation;
+    const {title, picture, description, price, text_color} = donation;
 
     // click handler
     const donationHandler = () =>{
@@ -40,8 +40,8 @@ const Donation = () => {
             {/* hello: {id} {title} */}
             <div className="mt-10 mx-auto">
                 <img src={picture} alt="" className="w-full"/>
-                <div className="bg-black bg-opacity-40 -mt-10 md:-mt-[120px] absolute w-3/4 p-1 md:p-8">
-                    <button onClick={()=> donationHandler()} className="text-white bg-red-500 p-1 md:p-4 rounded-md">Donate ${price}</button>
+                <div className="bg-black bg-opacity-50 -mt-10 md:-mt-[120px] absolute w-3/4 p-1 md:p-8">
+                    <button onClick={()=> donationHandler()} className="text-white p-1 md:p-4 rounded-md" style={{backgroundColor:text_color}}>Donate ${price}</button>
                 </div>
                 <div className="space-y-2">
                 <h1 className="text-xl md:text-4xl font-medium">{title}</h1>
