@@ -21,7 +21,7 @@ const Stats = () => {
     // console.log(storageDonation);
     const donations = [totalDonation, storageDonation];
     return (
-        <div>
+        <div className='scale-50 lg:scale-100'>
             <PieChartComponent parameter={donations}></PieChartComponent>
         </div>
     );

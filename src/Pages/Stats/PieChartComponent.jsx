@@ -1,7 +1,7 @@
 import React from 'react';
 import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
 
-const PieChartComponent = ({parameter}) => {
+const PieChartComponent = ({ parameter }) => {
     console.log(parameter[0]);
     const data = [
         { name: 'Your Donation', value: parameter[1] },
@@ -25,29 +25,29 @@ const PieChartComponent = ({parameter}) => {
         );
     };
 
-    const COLORS = [ '#00C49F', '#FF444A'];
+    const COLORS = ['#00C49F', '#FF444A'];
 
     return (
         <div className='flex h-[75vh] items-center justify-center'>
             <PieChart width={400} height={400}>
-            <Pie
-                dataKey="value"
-                isAnimationActive={false}
-                data={data}
-                cx={200}
-                cy={200}
-                outerRadius={150}
-                fill="#8884d8"
-                label={renderLabel}
-                labelLine={false}
-            >
-                {
-                    data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
-                }
-            </Pie>
-            <Tooltip />
-            <Legend />
-        </PieChart>
+                <Pie
+                    dataKey="value"
+                    isAnimationActive={false}
+                    data={data}
+                    cx={200}
+                    cy={200}
+                    outerRadius={150}
+                    fill="#8884d8"
+                    label={renderLabel}
+                    labelLine={false}
+                >
+                    {
+                        data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
+                    }
+                </Pie>
+                <Tooltip />
+                <Legend />
+            </PieChart>
         </div>
     );
 }

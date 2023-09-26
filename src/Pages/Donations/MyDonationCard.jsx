@@ -6,7 +6,7 @@ const MyDonationCard = ({donation}) => {
         <div className="mt-5">
             <div className="flex flex-col md:flex-row items-center gap-2 rounded-md" style={{backgroundColor:bg_color}}>
                 <div className="">
-                    <img src={picture} alt="" className="rounded-md h-200px" />
+                    <img src={picture} alt="" className="rounded-md lg:w-[220px] lg:h-[170px]" />
                 </div>
                 <div className="p-2 space-y-2">
                     <p className="text-sm inline-block p-0.5 rounded-md" style={{color:text_color, backgroundColor:category_color}}>{category}</p>
