@@ -6,10 +6,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Root from './Root/Root';
-import Hero from './components/Hero/Hero';
-import Donations from './components/Donations/Donations';
 import Donation from './components/Donation/Donation';
 import DonantionsContainer from './components/DonationsContainer/DonantionsContainer';
+import Donations from './Pages/Donations/Donations';
 
 const router = createBrowserRouter([
   {
