@@ -1,6 +1,6 @@
 import React from 'react';
 import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
-
+import PropTypes from 'prop-types';
 const PieChartComponent = ({ parameter }) => {
     console.log(parameter[0]);
     const data = [
@@ -51,5 +51,7 @@ const PieChartComponent = ({ parameter }) => {
         </div>
     );
 }
-
+PieChartComponent.propTypes={
+    parameter: PropTypes.array.isRequired
+}
 export default PieChartComponent;

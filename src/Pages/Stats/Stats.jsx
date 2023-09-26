@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+
 import { useLoaderData } from 'react-router-dom';
 import PieChartComponent from './PieChartComponent';
 
@@ -26,5 +26,4 @@ const Stats = () => {
         </div>
     );
 };
-
 export default Stats;
