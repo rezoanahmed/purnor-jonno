@@ -1,35 +1,28 @@
-import React from 'react';
-import { useState } from 'react';
-import { PieChart, Pie, Tooltip, Sector, Cell } from 'recharts';
+import React, { useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
+import PieChartComponent from './PieChartComponent';
+
 const Stats = () => {
-    const myData = JSON.parse(localStorage.getItem('donation'));
-    
-    // console.log(myData);
-    
-    myData.map(element=>console.log(element))
-
-
-    const data = [
-        { name: `${myData[0].title}`, value: 23 },
-        { name: "b", value: 23 },
-        { name: "c", value: 94 },
-    ]
+    const data=useLoaderData();
+    // total donation
+    let price = 0;
+    data.map(element=>{
+        price+=element.price;  
+    })
+    const totalDonation = price;
+    // console.log(totalDonation);
+    // local storage donation
+    const storageData = JSON.parse(localStorage.getItem("donation"));
+    let storagePrice = 0;
+    storageData.map(element=>{
+        storagePrice+=element.price;
+    })
+    let storageDonation = storagePrice;
+    // console.log(storageDonation);
+    const donations = [totalDonation, storageDonation];
     return (
         <div>
-            <PieChart width={400} height={400}>
-                <Pie
-                    dataKey="value"
-                    isAnimationActive={false}
-                    data={data}
-                    cx="50%"
-                    cy="50%"
-                    outerRadius={80}
-                    fill="#8884d8"
-                    label
-                />
-                
-                <Tooltip />
-            </PieChart>
+            <PieChartComponent parameter={donations}></PieChartComponent>
         </div>
     );
 };

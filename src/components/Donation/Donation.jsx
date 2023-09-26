@@ -39,7 +39,7 @@ const Donation = () => {
         <div>
             {/* hello: {id} {title} */}
             <div className="mt-10 mx-auto">
-                <img src={picture} alt="" className="w-full"/>
+                <img src={picture} alt="" className="w-full mx-auto"/>
                 <div className="bg-black bg-opacity-50 -mt-10 md:-mt-[120px] absolute w-3/4 p-1 md:p-8">
                     <button onClick={()=> donationHandler()} className="text-white p-1 md:p-4 rounded-md" style={{backgroundColor:text_color}}>Donate ${price}</button>
                 </div>
